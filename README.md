@@ -19,11 +19,12 @@ mvn package jetty:run
 This will start Tomcat 6 embedded on port 8002.
 
 ### Testing the server
-Once started, you can navigate to http://localhost:8002/api/swagger.json to view the Swagger Resource Listing.
+Once started, you can navigate to http://localhost:8080 to view the Swagger API.
+you can also navigate to http://localhost:8080/hrs/rest/swagger.json to view the Swagger Resource Listing.
 This tells you that the server is up and ready to demonstrate Swagger.
 
 ### Using the UI
-There is an HTML5-based API tool bundled in this sample--you can view it it at [http://localhost:8002](http://localhost:8002). This lets you inspect the API using an interactive UI.  You can access the source of this code from [here](https://github.com/swagger-api/swagger-ui)
+There is an HTML5-based API tool bundled in this sample--you can view it it at [http://localhost:8080 ](http://localhost:8080 ). This lets you inspect the API using an interactive UI.  You can access the source of this code from [here](https://github.com/swagger-api/swagger-ui)
 
 ### Applying an API key
 The sample app has an implementation of the Swagger ApiAuthorizationFilter.  This restricts access to resources
@@ -35,3 +36,7 @@ based on api-key.  There are two keys defined in the sample app:
 
 When no key is applied, the "default-key" is applied to all operations.  If the "special-key" is entered, a
 number of other resources are shown in the UI, including sample CRUD operations.
+
+### Test the API
+
+you can input the request body,and click 'Try it out!' to test the API .
