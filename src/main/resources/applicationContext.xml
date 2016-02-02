@@ -15,8 +15,6 @@
 
   <!-- Swagger writers -->
   <bean id="swaggerWriter" class="io.swagger.jaxrs.listing.SwaggerSerializers" />
-  <!-- <bean id="apiWriter" class="io.swagger.jaxrs.listing.ApiDeclarationProvider" /> -->
-
   <!-- JSON mapper -->
   <bean id="jsonfProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider" />
 
@@ -39,28 +37,23 @@
     </cxf:features>
   </cxf:bus>
 
-  <!-- this scans the classes for resources -->
   <bean id="swaggerConfig" class="io.swagger.jaxrs.config.BeanConfig">
     <property name="resourcePackage" value="io.swagger.sample.resource"/>
     <property name="version" value="1.0.0"/>
-    <!--<property name="host" value="${swagger.basePath}"/>-->
-    <property name="basePath" value="/rest"/>
-    <property name="title" value="Swagger Petstore"/>
-    <property name="description" value="    rest   "/>
+    <property name="basePath" value="/hrs/rest"/>
+    <property name="title" value="Swagger 接口文档"/>
+    <property name="description" value="接口文档描述"/>
     <property name="contact" value="apiteam@swagger.io"/>
     <property name="license" value="Apache 2.0"/>
     <property name="licenseUrl" value="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-    <!-- <property name="filterClass" value="ApiAuthorizationFilterImpl"/> -->
     <property name="scan" value="true"/>
   </bean>
-
 
   <jaxrs:server id="swagger" address="/rest">
     <jaxrs:serviceBeans>
       <ref bean="userResource" />
       <ref bean="petResource" />
       <ref bean="petStoreResource" />
-
       <ref bean="swaggerResource" />
     </jaxrs:serviceBeans>
     <jaxrs:extensionMappings>
