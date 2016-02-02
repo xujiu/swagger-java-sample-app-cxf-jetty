@@ -55,27 +55,6 @@
   </bean>
 
 
-  <!--<bean class="org.apache.cxf.jaxrs.JAXRSServerFactoryBean" init-method="create">
-    <property name="address" value="/" />
-    <property name="serviceBeans">
-      <list>
-        <ref bean="userResource" />
-        <ref bean="petResource" />
-        <ref bean="petStoreResource" />
-
-        <ref bean="swaggerResource" />
-      </list>
-    </property>
-    <property name="providers">
-      <list>
-        <ref bean="jsonfProvider" />
-        <ref bean="swaggerWriter" />
-        <ref bean="exceptionMapper" />
-      </list>
-    </property>
-  </bean>
--->
-
   <jaxrs:server id="swagger" address="/rest">
     <jaxrs:serviceBeans>
       <ref bean="userResource" />
@@ -95,22 +74,4 @@
     </jaxrs:providers>
   </jaxrs:server>
 
- <!-- <jaxrs:server id="user" address="/user">
-    <jaxrs:serviceBeans>
-      <ref bean="userResource" />
-      <ref bean="petResource" />
-      <ref bean="petStoreResource" />
-
-      <ref bean="swaggerResource" />
-    </jaxrs:serviceBeans>
-    <jaxrs:extensionMappings>
-      <entry key="json" value="application/json;charset=UTF-8"/>
-      <entry key="xml" value="application/xml;charset=UTF-8"/>
-    </jaxrs:extensionMappings>
-    <jaxrs:providers>
-      <ref bean="jsonfProvider" />
-      <ref bean="swaggerWriter" />
-      <ref bean="exceptionMapper" />
-    </jaxrs:providers>
-  </jaxrs:server>-->
 </beans>
