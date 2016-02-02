@@ -16,7 +16,7 @@ To run the server, run this task:
 mvn package jetty:run
 ```
 
-This will start Tomcat 6 embedded on port 8002.
+This will start jetty embedded on port 8080.
 
 ### Testing the server
 Once started, you can navigate to http://localhost:8080 to view the Swagger API.
